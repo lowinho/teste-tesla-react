@@ -1,0 +1,32 @@
+@import './colors.scss';
+
+.button {
+    height: 40px;
+    border-radius: 8px;
+    font-weight: 500;
+    background: $colors-gray;
+    color: $colors-white;
+    padding: 0 32px;
+
+    cursor: pointer;
+    border: 0;
+  
+    transition: filter 0.2s;
+  
+    img {
+      margin-right: 8px;
+    }
+
+    &:hover {
+      background-color: $colors-soft-gray;
+    }
+  
+    &:not(:disabled):hover {
+      filter: brightness(0.9);
+    }
+  
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  }

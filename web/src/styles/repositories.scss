@@ -1,0 +1,303 @@
+@import './colors.scss';
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    flex-direction: row;
+    
+    #icon-repo {
+        margin-right: 5px;
+    }
+
+    .count{ 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 25px;
+        width: 25px;
+        border-radius: 50%;
+        background-color: #e6e6e6;
+        margin-left: 5px;
+
+        p {
+            font-size: 13px;
+            font-weight: bold;
+        }
+    }
+}
+
+.line {
+    display: flex;
+    justify-content: center;
+
+    .line-orange {
+        background-color: $colors-orange;
+        width: 200px;
+        height: 3px;
+    }
+}
+
+.container-repo {
+    display: grid;
+    grid-template-columns: 40%  60%;
+    grid-template-areas: "a b";
+    align-items: start;
+
+    .userSide {
+        margin-left: 7rem;
+        width: 80%;
+        grid-area: a;
+
+        img {
+            width: 80%;
+            height: 20%;
+            border-radius: 50%;
+            margin-top: -3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .img-avatar {
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            margin-top: -3rem;
+            margin-bottom: 1.5rem;
+            background-color: $colors-dark;
+        }
+
+        h1 {
+            color: $colors-dark;
+        }
+
+        button:hover {
+            box-shadow: inset 0 0 100px 100px $colors-soft-gray;
+            color: $colors-white;
+            transition-delay: 0.1s;
+        }
+
+        #username {
+            color: $colors-soft-gray;
+            margin: 0.3rem 0 1rem 0;
+            font-size: 25px;
+        }
+
+        .btn-follow {
+            width: 80%;
+            height: 50px;
+            font-weight: bold;
+            border-radius: 7px;
+            border: 1px solid $colors-soft-gray;
+            cursor: pointer;
+
+            a {
+                text-decoration: none;
+            }
+        }
+
+        #twitter {
+            color: $colors-dark;
+            margin-top: 2rem;
+            font-weight: bold;
+        }
+
+        .followers {
+            display: flex;
+            // align-items: center;
+            justify-content: start;
+            color: $colors-soft-gray;
+            margin-top: 2rem;
+
+            #icon-user {
+                margin-right: 5px;
+            }
+
+            #followers-count {
+                color: $colors-dark !important;
+                margin-right: 5px;
+                font-weight: bold;
+            }
+
+            #icon-star {
+                margin-right: 5px;
+            }
+        }
+
+        .email {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            flex-direction: row;
+            color: $colors-soft-gray;
+            margin: 2rem 0;
+
+            #icon-email {
+                margin-right: 5px;
+            }
+        }
+    }
+
+    .reposSide {
+        margin-top: 8rem;
+        grid-area: b;
+
+        .title-repo, .line-repo {
+            display: none;
+        }
+        
+        #repos {
+            margin: 3rem;
+
+            a:hover, h3:hover {
+                color: $colors-orange;
+            }
+        }
+
+        #title-repo {
+            color: $colors-blue;
+            margin-bottom: 1rem;
+        }
+
+        #updated {
+            color: $colors-soft-gray;
+        }
+
+        .info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 3rem;
+
+            .language {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-right: 30px;
+                // margin-top: 10px;
+                
+                .circle {
+                    width: 15px;
+                    height: 15px;
+                    border-radius: 50%;
+                    background-color: $colors-soft-gray;
+                    margin-right: 10px;
+                }
+    
+                #language-repo{
+                    color: $colors-soft-gray;
+                    font-size: 15px;
+                }
+            }
+
+            .datetime {
+                display: flex; 
+                align-items: center; 
+            }
+        }
+    }  
+}
+
+
+@media screen and (max-width: 1024px) {
+    .title, .line, #hr-repo {
+        display: none !important;
+    }
+
+    .container-repo {
+        display: flex;
+        align-items: center !important;
+        justify-content: center !important;
+        flex-direction: column;
+
+        .userSide {
+            width: 90%;
+            align-items: center !important;
+            justify-content: center !important;
+
+            img, .img-avatar {
+                width: 80%;
+                height: 20%;
+                border-radius: 50%;
+                margin-top: 2rem;
+                margin-bottom: 1.5rem;
+            }
+    
+            .img-avatar {
+                background-color: $colors-dark;
+            }
+    
+            .email {
+                display: flex;
+                justify-content: start;
+                align-items: center;
+                flex-direction: row;
+                color: $colors-soft-gray;
+                margin: 2rem 0;
+    
+                #icon-email {
+                    margin-right: 5px;
+                }
+            }
+        }
+
+        .reposSide {
+            margin-top: 2rem !important;
+            width: 90%;
+
+            .title-repo {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 80px;
+                flex-direction: row;
+                
+                #icon-repo {
+                    margin-right: 5px;
+                }
+            
+                .count{ 
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 25px;
+                    width: 25px;
+                    border-radius: 50%;
+                    background-color: #e6e6e6;
+                    margin-left: 5px;
+            
+                    p {
+                        font-size: 13px;
+                        font-weight: bold;
+                    }
+                }
+            }
+            
+            .line-repo {
+                display: flex;
+                justify-content: center;
+            
+                .line-orange {
+                    background-color: $colors-orange;
+                    width: 200px;
+                    height: 3px;
+                }
+            }
+        } 
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    img, .img-avatar {
+        width: 80%;
+        height: 20%;
+        border-radius: 50%;
+        margin-top: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .img-avatar {
+        background-color: $colors-dark;
+    }
+}
+
+@media screen and (min-width: 1441px) {}
